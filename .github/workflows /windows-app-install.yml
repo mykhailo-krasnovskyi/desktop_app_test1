@@ -1,0 +1,15 @@
+name: Windows App Installation Test
+
+on: workflow_dispatch
+
+jobs:
+  install-test:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run Installation and Verification
+        shell: pwsh
+        run: .\install_and_check.ps1
